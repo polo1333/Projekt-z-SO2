@@ -15,7 +15,12 @@ int main(int argc, char *argv[]) {
 		a = b;
 		b = x;
 	}
-    x = log10(a) + 1;
+	
+    if (a == 0) {
+		x = 1;
+	} else {
+		x = log10(a) + 1;
+	}
 
 	//  tebPrze = zbiera dziesi¹tki
 	int tabA[x], tabB[x], Wynik[x+1], tabPrze[x], i;
@@ -60,7 +65,7 @@ int main(int argc, char *argv[]) {
 	printf("+ ");
     i = x-1;
 
-	while (tabB[i]==0) {
+	while (tabB[i]==0 && i > 0) {
 		printf(" ");
 		i--;
 	}
